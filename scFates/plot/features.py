@@ -61,6 +61,7 @@ def trends(
     ] = "pearson",
     ord_thre=0.7,
     figsize: Union[None, tuple] = None,
+    dpi=600,
     axemb=None,
     show: Optional[bool] = None,
     output_mean: bool = False,
@@ -539,9 +540,9 @@ def trends(
     if show == False:
         return axs if plot_heatmap else axemb
     if save is not None:
-        savefile = "figures/trends" + save
+        savefile = save
         logg.warn("saving figure to file " + savefile)
-        fig.savefig(savefile, bbox_inches="tight")
+        fig.savefig(savefile, bbox_inches="tight", dpi = dpi)
 
 
 def single_trend(
